@@ -1,10 +1,22 @@
 package org.example;
 
-public  class   Car extends Vehicle {
+import java.util.Comparator;
 
-    public void tyre() {
+public  class Car implements Comparable<Car> {
+    public String carName;
+    public String carType;
 
-        System.out.println("Car has 2 tyres");
+    Car() {
+
     }
+    public Car (String carName,String carType) {
+        this.carName=carName;
+        this.carType=carType;
+    }
+
+    @Override
+    public int  compareTo(Car o1) {
+          return o1.carName.compareTo(this.carName);
+     }
 
 }
